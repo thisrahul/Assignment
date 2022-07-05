@@ -1,21 +1,24 @@
 package com.intern.assignment.ui.activity.news
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.AbsListView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.intern.assignment.R
+import com.google.firebase.auth.FirebaseAuth
 import com.intern.assignment.adapters.NewsAdapter
 import com.intern.assignment.databinding.ActivityNewsBinding
 import com.intern.assignment.models.Article
 import com.intern.assignment.repository.NewsRepository
+import com.intern.assignment.ui.activity.LoginSignupActivity
 import com.intern.assignment.util.Constants.Companion.QUERY_PAGE_SIZE
 import com.intern.assignment.util.Constants.Companion.SEARCH_NEWS_TIME_DELAY
 import com.intern.assignment.util.Resource
@@ -23,6 +26,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+
 
 class NewsActivity : AppCompatActivity() {
 
@@ -69,6 +73,29 @@ class NewsActivity : AppCompatActivity() {
                 }
             }
         })
+
+        binding.btnLogout.setOnClickListener{
+
+            val builder = AlertDialog.Builder(this@NewsActivity)
+            builder.setTitle("Logout!!")
+            builder.setMessage("Are you sure you want to logout?")
+            builder.setPositiveButton("Yes"){dialogInterface, which ->
+                //signout
+                FirebaseAuth.getInstance().signOut()
+                //open LoginSignUpActivity after  logout
+                val intent = Intent(this@NewsActivity, LoginSignupActivity::class.java)
+                startActivity(intent)
+                finish()
+
+            }
+            builder.setNegativeButton("No"){dialogInterface, which ->
+                dialogInterface.dismiss()
+            }
+
+            val alertDialog: AlertDialog = builder.create()
+            alertDialog.setCancelable(false)
+            alertDialog.show()
+        }
     }
 
     private fun hideProgressBar() {
