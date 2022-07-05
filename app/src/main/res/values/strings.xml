@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">QuantumAssignment</string>
+
+    <string name="facebook_app_id">216868393705622</string>
+    <string name="fb_login_protocol_scheme">fb216868393705622</string>
+
+    <string name="socialx">SocialX</string>
+
+    <string name="sign_in_to_your_naccount">Sign in to your\nAccount</string>
+    <string name="email_id">Email ID</string>
+    <string name="gmail">xyz@gmail.com</string>
+    <string name="password">Password</string>
+    <string name="pass">********</string>
+    <string name="forgot">Forgot Password?</string>
+    <string name="login_with">Login with</string>
+    <string name="dontAcount">Don\'t have an acount? <font color='#D60000'><b>Register now</b></font></string>
+    <string name="login">Login</string>
+
+    <string name="create">Create an\nAccount</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="hint_name">John doe</string>
+    <string name="contact_no">Contact no.</string>
+    <string name="phone_number">987654321</string>
+    <string name="welcome_to_home">Welcome to Home</string>
+    <string name="log_out">Log Out</string>
+    <string name="permission">I agree with <font color='#D60000'><b><u>term and condition</u></b></font></string>
+    <string name="already">Already have an Acount ? <font color='#D60000'><b>Sign In!</b></font></string>
+    <string name="sourc">2 hours ago <b>BBC News</b></string>
+</resources>
