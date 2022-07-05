@@ -11,3 +11,8 @@ Libraries used:
             
 Architecture used : MVVM            
             
+
+
+
+https://user-images.githubusercontent.com/52368582/177395189-fd83ccf8-5803-4443-96a3-af2c739a62dd.mp4
+
